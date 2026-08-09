@@ -154,4 +154,4 @@ If you are developing locally:
 
 ---
 
-<div align="center">Made with with ❤️ and ☕ by <strong>Álisson</strong> &copy; 2026*</div>
+<div align="center">Made with ❤️ and ☕ by <strong>Álisson</strong> &copy; 2026</div>
