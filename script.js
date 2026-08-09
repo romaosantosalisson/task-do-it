@@ -67,7 +67,7 @@ function renderTasks() {
     // ✔️ representing true/completed status, ⚪ representing false/not completed status
     statusBtn.innerHTML = taskObj.done ? '✔️' : '⚪';
     statusBtn.setAttribute('aria-label', taskObj.done ? 'Mark task as incomplete' : 'Mark task as complete');
-    
+
     // FR002: Click status button to toggle task's status
     statusBtn.addEventListener('click', (e) => {
       e.stopPropagation();
