@@ -20,14 +20,14 @@ The application features a modern, clean, and interactive user interface:
 *   **💾 LocalStorage Persistence:** Your tasks are safe! All task additions, modifications, status toggles, and deletions are saved in real-time to the browser's `localStorage` so they survive page reloads.
 *   **➕ Fluent Add & Auto-Scroll:** Add tasks instantly. The container auto-scrolls with a smooth animation to focus on your newly added task at the bottom of the list.
 *   **🧹 Smart Empty State:** Shows a beautiful, welcoming empty-state message (`✨ No tasks left! Add a task to get started.`) when there are no pending or completed tasks.
-*   **📱 Fully Responsive:** Carefully optimized with fluid flexbox layouts and `rem` units for high legibility across mobile devices, tablets, and large desktop screens.
+*   **📱 Mobile-First & TailwindCSS Breakpoints:** Engineered with a strict **Mobile-First** approach. Default styles target compact touchscreens (<640px), progressively adapting to larger displays using standard TailwindCSS media queries (`sm: 640px`, `md: 768px`, `lg: 1024px`, `xl: 1280px`).
 
 ---
 
 ## 🛠️ Technology Stack
 
 *   **HTML5:** Semantic architecture with built-in form validation, accessible attributes (`aria-labels`), and custom SVG favicons.
-*   **CSS3 (Vanilla):** Modern CSS utilizing linear gradients, custom-styled minimalist scrollbars, flexbox layouts, active states, and custom bezier transitions (`cubic-bezier(0.4, 0, 0.2, 1)`).
+*   **CSS3 (Vanilla & Tailwind Standards):** Modern CSS built mobile-first, utilizing linear gradients, standard TailwindCSS breakpoints (`sm`, `md`, `lg`, `xl`), custom minimalist scrollbars, flexbox layouts, active states, and bezier transitions (`cubic-bezier(0.4, 0, 0.2, 1)`).
 *   **JavaScript (ES6+):** Pure Vanilla JS using modern event delegation, local persistence, lifecycle logic, dynamic DOM generation, and clean functional programming patterns.
 *   **Google Fonts:** `Poppins` (Weights: 400, 500, 600, 700).
 
@@ -48,6 +48,7 @@ This project was built to conform strictly to a robust set of Functional (FR) an
 | **NFR005** | Standardized tasks structure using an array of objects. | Instantiated local state mapped directly to: `const tasks = [{ task: "...", done: true/false }]`. |
 | **NFR006** | Text input and adjacent button to add tasks. | Standardized a flexbox container form `#add-task-form` holding `#task-input` and `#add-task-btn` side-by-side. |
 | **NFR007** | Use emojis or icons for interactions with consistent, harmonious hover effects. | Custom actions styled with scale-ups and rotations: `➕ Add` (rotates 90°), `✏️` (rotates -5°), `🗑️` (rotates 5°), and status circle toggles (`⚪` -> `✔️`). |
+| **NFR008** | Apply mobile-first design pattern and standard TailwindCSS media queries (`sm`, `md`, `lg`, `xl`). | Default CSS rules target narrow mobile screens (<640px) with stacked full-width controls. Progressive layout scaling implemented via `@media (min-width: 640px)` (`sm`), `@media (min-width: 768px)` (`md`), `@media (min-width: 1024px)` (`lg`), and `@media (min-width: 1280px)` (`xl`). |
 
 ### Functional Requirements (FR)
 

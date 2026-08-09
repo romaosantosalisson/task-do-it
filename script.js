@@ -44,11 +44,7 @@ function renderTasks() {
   if (tasks.length === 0) {
     // Optional: Render a beautiful empty state when no tasks are present
     const emptyState = document.createElement('li');
-    emptyState.className = 'task-card';
-    emptyState.style.justifyContent = 'center';
-    emptyState.style.color = '#94a3b8';
-    emptyState.style.fontSize = '1.4rem';
-    emptyState.style.padding = '3rem';
+    emptyState.className = 'task-card empty-state-card';
     emptyState.innerHTML = '✨ No tasks left! Add a task to get started.';
     tasksList.appendChild(emptyState);
     return;
@@ -195,6 +191,8 @@ function startEditing(cardElement, index) {
     const textVal = input.value;
     input.value = '';
     input.value = textVal;
+    // Scroll into view on mobile when virtual keyboard pops up
+    activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 

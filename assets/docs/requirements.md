@@ -28,6 +28,8 @@ const tasks = [
 
 **NFR007:** Use emojis or icons for the **Add Task**, **Edit**, and **Delete** buttons. Apply visually consistent and harmonious effects to these icons or emojis.
 
+**NFR008:** Apply a mobile-first design approach and CSS media queries adhering strictly to Tailwind CSS standard breakpoints (`sm: 640px`, `md: 768px`, `lg: 1024px`, `xl: 1280px`) to ensure perfect visual adaptation across all mobile, tablet, desktop, and widescreen display sizes.
+
 ## Functional Requirements
 
 **FR001:** Add a new task with `done` set to `false` by default.
