@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- NFR001: Favicon representing the project accurately -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>✔️</text></svg>">
+  <title>Task: Do It</title>
+  <!-- Beautiful Google Font Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <!-- NFR003: h1 and h2 tags with capitalised text, bold weight -->
+      <h1 class="app-title">Task: Do It</h1>
+      <h2 class="app-subtitle">My Tasks</h2>
+    </header>
+
+    <!-- NFR006: Text input for task name and an Add button next to it -->
+    <form id="add-task-form">
+      <input 
+        type="text" 
+        id="task-input" 
+        placeholder="Type a task to add..." 
+        required 
+        autocomplete="off" 
+        maxlength="100"
+      />
+      <!-- NFR007: Emoji/icon for Add Task button with visually consistent effect -->
+      <button type="submit" id="add-task-btn" aria-label="Add Task">
+        <span class="btn-emoji">➕</span> Add
+      </button>
+    </form>
+
+    <div class="tasks-wrapper">
+      <ul id="tasks-list">
+        <!-- Tasks will be rendered dynamically here using JavaScript -->
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

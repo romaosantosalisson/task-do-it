@@ -1,0 +1,295 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+/* NFR002: Gray with a linear gradient background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* App Container */
+.app-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  max-width: 50rem;
+  border-radius: 2rem;
+  padding: 4rem 3.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* NFR003: Header styling with capitalised text, bold weight, and beautiful font */
+header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.app-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: capitalize;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.app-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+}
+
+/* NFR006: Add task form & input fields */
+#add-task-form {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+#task-input {
+  flex-grow: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  padding: 1.4rem 1.8rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 1.2rem;
+  background-color: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#task-input:focus {
+  border-color: #64748b;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(100, 116, 139, 0.15);
+}
+
+/* Add Task Button */
+#add-task-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1.4rem 2.4rem;
+  border: none;
+  border-radius: 1.2rem;
+  background-color: #0f172a;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.15);
+}
+
+#add-task-btn:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.25);
+}
+
+#add-task-btn:active {
+  transform: translateY(0);
+}
+
+/* NFR007: Visual effect on emojis inside the Add button */
+#add-task-btn .btn-emoji {
+  transition: transform 0.2s ease;
+}
+
+#add-task-btn:hover .btn-emoji {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Tasks Wrapper & List */
+.tasks-wrapper {
+  max-height: 42rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Modern minimalist scrollbar */
+.tasks-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tasks-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tasks-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.tasks-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+#tasks-list {
+  list-style: none;
+}
+
+/* NFR004: Task Card display with CSS hover effects */
+.task-card {
+  background-color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.6rem 2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #f1f5f9;
+}
+
+/* Card Hover effect */
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  border-color: #e2e8f0;
+}
+
+/* Left portion: status indicator + text/input */
+.task-left-section {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-grow: 1;
+}
+
+/* NFR004: Completed task = bold, Not completed task = font-weight 500 */
+.task-text {
+  font-size: 1.5rem;
+  color: #334155;
+  transition: all 0.3s ease;
+  word-break: break-word;
+  user-select: none;
+}
+
+/* Completed font bold, line-through, and softer color */
+.task-text.completed {
+  font-weight: 700; /* Bold */
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Pending/not completed has font-weight 500 */
+.task-text.pending {
+  font-weight: 500; /* Medium font weight */
+  text-decoration: none;
+}
+
+/* Inline Edit Input Field */
+.edit-input {
+  display: none;
+  flex-grow: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #3b82f6;
+  border-radius: 0.8rem;
+  background-color: #f8fafc;
+  color: #0f172a;
+  outline: none;
+}
+
+.edit-input:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Task Buttons Styling */
+.btn-action {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.6rem;
+  border-radius: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Harmonious effects per button type (NFR007) */
+.btn-action.status-btn {
+  font-size: 2rem;
+  padding: 0.4rem;
+}
+
+.btn-action.status-btn:hover {
+  background-color: #f0fdf4;
+  transform: scale(1.15);
+}
+
+.btn-action.edit-btn:hover {
+  background-color: #eff6ff;
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.btn-action.delete-btn:hover {
+  background-color: #fef2f2;
+  transform: scale(1.15) rotate(5deg);
+}
+
+.btn-action.save-btn:hover {
+  background-color: #f0fdf4;
+  transform: scale(1.15);
+}
+
+.btn-action.cancel-btn:hover {
+  background-color: #fef2f2;
+  transform: scale(1.15);
+}
+
+.btn-action:active {
+  transform: scale(0.95) rotate(0deg);
+}
+
+/* Button Group containers */
+.action-group {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.edit-actions {
+  display: none;
+}
+
+/* Toggle visibility in edit state */
+.task-card.editing .task-text,
+.task-card.editing .status-btn,
+.task-card.editing .standard-actions {
+  display: none;
+}
+
+.task-card.editing .edit-input {
+  display: block;
+}
+
+.task-card.editing .edit-actions {
+  display: flex;
+}
